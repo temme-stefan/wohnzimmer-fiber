@@ -1,0 +1,31 @@
+#appContainer {
+    display: grid;
+    grid-template:
+        "main" 1fr
+        "nav" 1fr
+        /1fr;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow: hidden;
+}
+
+@media (orientation: landscape) {
+    #appContainer {
+        display: grid;
+        grid-template:
+        "main nav" auto
+        "main nav" 1fr
+        "main nav" auto
+        /1fr minmax(300px, 20%);
+    }
+}
+main{
+    grid-area: main;
+}
+nav{
+    grid-area: nav;
+    background: lightgrey;
+}
